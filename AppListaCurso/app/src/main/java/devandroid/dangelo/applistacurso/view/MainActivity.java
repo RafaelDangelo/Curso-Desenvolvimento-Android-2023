@@ -31,10 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         pessoa = new Pessoa();
-        /*pessoa.setPrimeiroNome("Rafael");
-        pessoa.setSobreNome("Dangelo");
-        pessoa.setTelefone("12 99234765");
-        pessoa.setCursoDesejado("Desenvolvimento Android");*/
 
         editTextPrimeiroNome = findViewById(R.id.editTextPrimeiroNome);
         editTextSobrenome = findViewById(R.id.editTextSobrenome);
@@ -58,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Obrigado por usar nosso App!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Obrigado por usar nosso App!", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
@@ -71,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setCursoDesejado(editTextNomeCurso.getText().toString());
                 pessoa.setTelefone(editTextTelefone.getText().toString());
 
-                Toast.makeText(MainActivity.this,"Salvo: " + pessoa.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Salvo: " + pessoa.toString(), Toast.LENGTH_LONG).show();
             }
         });
 

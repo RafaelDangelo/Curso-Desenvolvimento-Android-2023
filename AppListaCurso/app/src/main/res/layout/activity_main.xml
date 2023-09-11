@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-    <Button android:id="@+id/btnFinalizar"
+    <Button
+        android:id="@+id/btnFinalizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -31,7 +32,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTelefone"
         app:layout_constraintVertical_bias="0.64" />
 
-    <Button android:id="@+id/btnLimpar"
+    <Button
+        android:id="@+id/btnLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -42,7 +44,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTelefone"
         app:layout_constraintVertical_bias="0.643" />
 
-    <TextView android:id="@+id/txtTitulo"
+    <TextView
+        android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_titulo"
@@ -55,7 +58,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.036" />
 
-    <EditText android:id="@+id/editTextPrimeiroNome"
+    <EditText
+        android:id="@+id/editTextPrimeiroNome"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
@@ -68,7 +72,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
 
-    <EditText android:id="@+id/editTextNomeCurso"
+    <EditText
+        android:id="@+id/editTextNomeCurso"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
@@ -81,7 +86,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSobrenome" />
 
-    <EditText android:id="@+id/editTextTelefone"
+    <EditText
+        android:id="@+id/editTextTelefone"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
@@ -94,7 +100,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNomeCurso" />
 
-    <EditText android:id="@+id/editTextSobrenome"
+    <EditText
+        android:id="@+id/editTextSobrenome"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
