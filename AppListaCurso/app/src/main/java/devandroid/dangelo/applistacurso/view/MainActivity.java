@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     PessoaController controller;
 
     SharedPreferences preferences; //Cria arquivo temporário localmente para salvar infos.
-    public static final String NOME_PREFERENCES = "pref_listavip";
+    public static final String NOME_PREFERENCES = "pref_listavip";//Nome do arquivo xml que salva na pasta Sharedpref.
 
     Button btnFinalizar;
     Button btnSalvar;
