@@ -2,6 +2,7 @@ package devandroid.dangelo.applistacurso.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
     PessoaController controller;
+
+    SharedPreferences preferences; //Cria arquivo temporário localmente para salvar infos.
+    public static final String NOME_PREFERENCES = "pref_listavip";//Nome do arquivo xml que salva na pasta Sharedpref.
 
     Button btnFinalizar;
     Button btnSalvar;
@@ -34,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
         pessoa = new Pessoa();
         controller = new PessoaController();
+
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        SharedPreferences.Editor listaVip = preferences.edit(); //Criação do arquivo e abre para edição
+
 
         editTextPrimeiroNome = findViewById(R.id.editTextPrimeiroNome);
         editTextSobrenome = findViewById(R.id.editTextSobrenome);
@@ -73,6 +81,13 @@ public class MainActivity extends AppCompatActivity {
                 controller.salvar(pessoa);
 
                 Toast.makeText(MainActivity.this, "Salvo: " + pessoa.toString(), Toast.LENGTH_LONG).show();
+
+                listaVip.putString("primeiroNome", pessoa.getPrimeiroNome()); //Envia os dados para o Shared Pref. Popula o arquivo
+                listaVip.putString("sobreNome", pessoa.getSobreNome());
+                listaVip.putString("nomeDoCursoDesejado", pessoa.getCursoDesejado());
+                listaVip.putString("telefone", pessoa.getTelefone());
+
+                listaVip.apply();//Salva os dados no arquivo
             }
         });
 
