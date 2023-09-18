@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences; //Cria arquivo temporário localmente para salvar infos.
     public static final String NOME_PREFERENCES = "pref_listavip";//Nome do arquivo xml que salva na pasta Sharedpref.
+    SharedPreferences.Editor listaVip;
 
     Button btnFinalizar;
     Button btnSalvar;
@@ -39,10 +40,8 @@ public class MainActivity extends AppCompatActivity {
         pessoa = new Pessoa();
         controller = new PessoaController();
 
-
-
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor listaVip = preferences.edit(); //Criação do arquivo e abre para edição
+        listaVip = preferences.edit(); //Criação do arquivo e abre para edição
 
         pessoa.setPrimeiroNome(preferences.getString("primeiroNome", ""));
         pessoa.setSobreNome(preferences.getString("sobreNome", ""));
@@ -53,15 +52,14 @@ public class MainActivity extends AppCompatActivity {
         editTextSobrenome = findViewById(R.id.editTextSobrenome);
         editTextNomeCurso = findViewById(R.id.editTextNomeCurso);
         editTextTelefone = findViewById(R.id.editTextTelefone);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
 
         editTextPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editTextSobrenome.setText(pessoa.getSobreNome());
         editTextNomeCurso.setText(pessoa.getCursoDesejado());
         editTextTelefone.setText(pessoa.getTelefone());
-
-        btnFinalizar = findViewById(R.id.btnFinalizar);
-        btnLimpar = findViewById(R.id.btnLimpar);
-        btnSalvar = findViewById(R.id.btnSalvar);
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
                 editTextSobrenome.setText("");
                 editTextNomeCurso.setText("");
                 editTextTelefone.setText("");
+
+                listaVip.clear();
+                listaVip.apply();
+
             }
         });
 
@@ -103,6 +105,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Log.i("POO Android", pessoa.toString());
-
     }
 }
