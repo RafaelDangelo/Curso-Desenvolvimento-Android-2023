@@ -6,7 +6,7 @@ import android.util.Log;
 import devandroid.dangelo.applistacurso.model.Pessoa;
 import devandroid.dangelo.applistacurso.view.MainActivity;
 
-public class PessoaController {
+public class    PessoaController {
 
     SharedPreferences preferences;
     public static final String NOME_PREFERENCES = "pref_listavip";
